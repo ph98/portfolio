@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm run build && touch dist/.nojekyll && cd dist && git init -b gh-pages -q && git add -A && git commit -q -m Deploy && git push -f git@github.com:ph98/portfolio.git gh-pages && cd .. && rm -rf dist/.git"
   },
   "dependencies": {
     "gsap": "^3.12.5",
